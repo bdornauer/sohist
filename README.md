@@ -26,7 +26,7 @@ built from local Dockerfiles, while *sonarqube* and *db* are pulled from Docker-
 the web application, while the backend acts as the *center layer* between *SonarQube*, *React* and *GitLab*.
 
 1. Make sure that all related *volumes*, *containers* and *images* in Docker are deleted (starting with *sohist_*)
-2. Execute the docker-compose.yml with `docker-compose up`
+2. Execute the docker-compose.yml with `docker compose up`
 3. Now you can access the following:
     1. The WebApp (Frontend) can be accessed via [http://localhost:3000/](http://localhost:3000/).
     2. SonarQube is running on port [http://localhost:9000/](http://localhost:9000/). It can be accessed (! after
