@@ -4,7 +4,7 @@
 
 ## General Information
 
-SoHist solves adds the following features to the SonarQube Community Edition:
+SoHist adds the following features to the SonarQube Community Edition:
 
 1. **Better Comparability**: SonarQube and possible plugins update over time so that the quality measurement approaches
    could
@@ -29,7 +29,7 @@ the web application, while the backend acts as the *center layer* between *Sonar
 2. Execute the docker-compose.yml with `docker-compose up`
 3. Now you can access the following:
     1. The WebApp (Frontend) can be accessed via [http://localhost:3000/](http://localhost:3000/).
-    2. SonarQube is running on port [http://localhost:9000/](http://localhost:9000/). It can be accessed (after
+    2. SonarQube is running on port [http://localhost:9000/](http://localhost:9000/). It can be accessed (! after
        initialization via WebApp) with
         1. Username: `admin`
         2. Password: `sohist`
@@ -44,8 +44,7 @@ To use the WebApp, follow these steps:
 1. Fill out the `Input` form using the example provided. If the format is incorrect, an error message will appear. If
    all credentials are correct, the WebApp will load the necessary information from your GIT repository.
 
-    - **GIT-Url:** Use `http://` or `https://`, but do not include `/` at the end. For
-      example, `https://git.uibk.ac.at`.
+    - **GIT-Url:** Use `http://` or `https://`. For example, `https://git.uibk.ac.at`.
     - **Repository name:** Include the repository name, without its path. For example, `my-sample-project`.
     - **Username:** Use your username of the git repository. For example, `user1`.
     - **USER-Access-Token:** The project access token alone is not sufficient, as the repository must be cloned. Use
@@ -55,7 +54,7 @@ To use the WebApp, follow these steps:
    the `backend/extra-sonarqube-properties.txt` (see details [Docs Sonarqube](https://docs.sonarqube.org/9.6/analyzing-source-code/analysis-parameters/)).
 
 3. Fill out the `Filter options` section to specify the time range of commits to include, the committers whose commits
-   should be included, and the specific branch to analyze. Run the analysis 
+   should be included, and the specific branch to analyze. Run the analysis. 
 
 ## Analyse Results
 ### Included overview 
@@ -64,6 +63,7 @@ to the *Results inside* view (located in the Header). From there, you can load t
 significance of each commit.
 
 Simply press the buttons provided to update and load the latest results in the charts of the analysis.
+
 ### Sonarqube instance  
 In addition, the Sonarqube instance can be accessed via http://localhost:9000/, wither username `admin`
 und password `sohist`. The project name is equal to the repository-name. 
