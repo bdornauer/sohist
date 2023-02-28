@@ -1,0 +1,41 @@
+function sendSelectionInformation() {
+        const tempBranches = [];
+        const tempCommitters = [];
+
+        committers.forEach(committer => {
+            if (committer.checked) tempCommitters.push(committer.name);
+        });
+
+        branches.forEach(branch => {
+            if (branch.checked) tempBranches.push(branch.name);
+        });
+
+        const data = {
+            "startDate": startDate,
+            "endDate": endDate,
+            "branches": branches,
+            "committers": committers
+        }
+
+        console.log(data);
+
+        fetch('http://127.0.0.1:4040/gitInformationLogin', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+                setGitCommits(data.commits);
+                setGitSuccessLoad(true);
+                updateBranches(data.branches)
+                updateCommitters(data.committers)
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                setErrorMessage(error)
+            });
+    }

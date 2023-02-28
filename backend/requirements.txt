@@ -1,0 +1,9 @@
+requests
+flask
+jsonify
+flask-cors
+pandas==1.5.3
+regex
+gitpython
+thread6
+pytest-shutil

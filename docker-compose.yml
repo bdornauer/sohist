@@ -1,0 +1,69 @@
+version: '3.8'
+services:
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    networks:
+      - sonarnet
+    volumes:
+      - './:/app'
+      - '/app/node_modules'
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    command: npm start
+
+  backend:
+    container_name: backend
+    build: ./backend
+    networks:
+      - sonarnet
+    volumes:
+      - '/backend'
+    ports:
+      - "4040:4040"
+    stdin_open: true
+
+  sonarqube:
+    image: sonarqube:9.9.0-community
+    container_name: sonarqube
+    networks:
+      - sonarnet
+    depends_on:
+      - db
+    environment:
+      - sonar.jdbc.url=jdbc:postgresql://db:5432/sonar
+      - sonar.jdbc.username=sonar
+      - sonar.jdbc.password=sonar
+    volumes:
+      - sonarqube_conf:/opt/sonarqube/conf
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_logs:/opt/sonarqube/logs
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
+    ports:
+      - "9000:9000"
+
+  db:
+    image: postgres:12
+    container_name: db
+    networks:
+      - sonarnet
+    environment:
+      POSTGRES_USER: sonar
+      POSTGRES_PASSWORD: sonar
+    volumes:
+      - postgresql:/var/lib/postgresql
+      - postgresql_data:/var/lib/postgresql/data
+
+volumes:
+  sonarqube_conf:
+  sonarqube_data:
+  sonarqube_logs:
+  sonarqube_extensions:
+  sonarqube_bundled-plugins:
+  postgresql:
+  postgresql_data:
+
+networks:
+  sonarnet:
