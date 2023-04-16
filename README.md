@@ -68,4 +68,7 @@ Simply press the buttons provided to update and load the latest results in the c
 In addition, the Sonarqube instance can be accessed via http://localhost:9000/, wither username `admin`
 und password `sohist`. The project name is equal to the repository-name. 
 
-
+## Further Literature 
+- Demonstration(s) of SoHist: Dornauer Benedikt. (2023, March 9). Presentation of SoHist (1.0). Zenodo. [https://doi.org/10.5281/zenodo.7713782](https://doi.org/10.5281/zenodo.7713782)
+- Computations behind the Weighted Code Evolution Significance: *Benedikt Dornauer. (2023). Computations behind the Weighted Code Evolution Significance (1.0). Zenodo. [https://doi.org/10.5281/zenodo.7713698](https://doi.org/10.5281/zenodo.7713698)*
+- Code Analysis Tools compared: *Benedikt Dornauer. (2023). Trend of Code Analysis Tools 2004 -2023 [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.783419](https://doi.org/10.5281/zenodo.783419)*
