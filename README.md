@@ -62,6 +62,8 @@ Once all included commits have been loaded, the analysis will be triggered in th
 to the *Results inside* view (located in the Header). From there, you can load the charts and view information about the
 significance of each commit.
 
+:warning: **To the end-user, we want to stress that with great power comes great responsibility. This statement highlights the importance of appropriate weighting, as improper weighting can distort the representation of the actual state of a project**
+
 Simply press the buttons provided to update and load the latest results in the charts of the analysis.
 
 ### Sonarqube instance  
