@@ -146,6 +146,7 @@ class GitRepository:
         new_url = self.git_url.replace("http://", "").replace("https://", "")
         url = "https://gitlab-ci-token:{0}@{1}/{2}.git".format(self.access_token, new_url,
                                                                self.path_with_namespace)
+        print("Running git clone with url: " + url)
         subprocess.run(["git", "clone", url])
 
     @staticmethod
