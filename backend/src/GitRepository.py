@@ -174,8 +174,6 @@ class GitRepository:
         return f"{short_id} ({day:02d}.{month:02d}.{year:04d} {hours}:{minutes})"
 
 
-
-
     def execute_sonar_qube_runs(self):
         tempPath = "/opt/backend/"  # /opt/backend/src/
         print("Before " + os.getcwd())

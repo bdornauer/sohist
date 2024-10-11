@@ -1,9 +1,8 @@
-requests
-flask
-jsonify
-flask-cors
-pandas==1.5.3
-regex
-gitpython
-thread6
-pytest-shutil
+requests==2.32.3
+flask==3.0.3
+flask-cors==5.0.0
+pandas==2.2.3
+regex== 2024.9.11
+gitpython==3.1.43
+thread6==0.2.0
+pytest-shutil==1.7.0
