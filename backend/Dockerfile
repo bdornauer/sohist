@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM python:3.11-slim
 
 #Install Python and pip3
 RUN apt update #update packages

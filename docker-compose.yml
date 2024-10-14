@@ -45,7 +45,7 @@ services:
       - "9000:9000"
 
   db:
-    image: postgres:12
+    image: postgres:17
     container_name: db
     networks:
       - sonarnet
